@@ -144,5 +144,14 @@ namespace ComputerAPInet.Controllers
                 .Select(cmp => new { cmp.Brand, cmp.Type, cmp.Display, cmp.Os.Name }).ToListAsync();
             return Ok(cmpmaxdisplay);
         }
+
+        [HttpGet("most recent")]
+        public async Task<ActionResult<Comp>> getrecent()
+        {
+            var mostrecent = await computerContext.Comps.MaxAsync(cmp => cmp.CreatedTime);
+            var cmprecent = await computerContext.Comps.Where(cmp => cmp.CreatedTime == mostrecent)
+                .Select(cmp => new {cmp}).ToListAsync();
+            return Ok(cmprecent);
+        }
     }
 }
