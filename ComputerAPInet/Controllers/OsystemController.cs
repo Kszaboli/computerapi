@@ -53,7 +53,8 @@ namespace ComputerApiHetfo.Controllers
 
             return NotFound(new { message = "Nincs ilyen találat." });*/
         }
-
+        /*
+        [HttpGet("WithComp")]
         public async Task<ActionResult> GetWithComp(Guid id)
         {
             var os = await computerContext.Osystems
@@ -83,7 +84,7 @@ namespace ComputerApiHetfo.Controllers
 
             return NotFound();
         }
-
+        */
 
         [HttpPut("{id}")]
         public async Task<ActionResult<Osystem>> Put(Guid id, UpdateOsDto updateOsDto)

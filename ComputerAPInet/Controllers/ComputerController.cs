@@ -3,6 +3,7 @@ using ComputerAPInet.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Org.BouncyCastle.Asn1.Cmp;
 
 namespace ComputerAPInet.Controllers
 {
@@ -56,6 +57,8 @@ namespace ComputerAPInet.Controllers
             return comp != null ? Ok(comp) : NotFound(new { message = "Nincs ilyen találat." });
         }        
 
+
+
         [HttpPut("{id}")]
         public async Task<ActionResult<Comp>> Put(Guid id, UpdateCompDto updateCompDto)
         {
@@ -75,6 +78,18 @@ namespace ComputerAPInet.Controllers
             return NotFound(new { message = "Nincs ilyen találat." });
         }
 
+        [HttpGet]
+        public async Task<ActionResult<Comp>> GetNumOfComp()
+        {
+            var num = await computerContext.Comps.ToListAsync();
+
+            if (num != null)
+            {
+                return Ok(new { message = $"Az adatbázisban {num}db computer van." });
+            }
+            return BadRequest();
+        }
+
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(Guid id)
         {
@@ -88,6 +103,44 @@ namespace ComputerAPInet.Controllers
             await computerContext.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        [HttpGet("allcompwithos")]
+        public async Task<ActionResult<Comp>> getallcompwithos()
+        {
+            var allcomp = await computerContext.Comps.Select(cmp => new
+            {
+                cmp.Brand,
+                cmp.Type,
+                cmp.Os.Name
+            }).ToListAsync();
+            return Ok(allcomp);
+        }
+
+        public async Task<ActionResult<Comp>> getallmicrosoft(string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                return BadRequest("Keyword cannot be empty.");
+            }
+            else
+            {
+                var allwithsearchos = await computerContext.Comps.Where(cmp =>
+                cmp.Os.Name.Contains(keyword)).Select(cmp => new { cmp.Brand, cmp.Type, cmp.Os.Name }).ToListAsync();
+
+                if (allwithsearchos != null)
+                {
+                    return Ok(allwithsearchos);
+                }
+            }
+            return NotFound();
+        }
+
+        [HttpGet("biggestDisplay")]
+        public async Task<ActionResult<Comp>> getbiggestdisplay()
+        {
+            var biggestdisplay = await computerContext.Comps.MaxAsync(cmp => cmp.Display);
+            return Ok(biggestdisplay);
         }
     }
 }

@@ -47,6 +47,26 @@
   },
   {
     "ContainingType": "ComputerAPInet.Controllers.CompController",
+    "Method": "GetNumOfComp",
+    "RelativePath": "comp",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApiHetfo.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerAPInet.Controllers.CompController",
     "Method": "GetById",
     "RelativePath": "comp/{id}",
     "HttpMethod": "GET",
@@ -119,6 +139,46 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ComputerAPInet.Controllers.CompController",
+    "Method": "getallcompwithos",
+    "RelativePath": "comp/allcompwithos",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApiHetfo.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerAPInet.Controllers.CompController",
+    "Method": "getallmicrosoft",
+    "RelativePath": "comp/allMicrosoft",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApiHetfo.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "ComputerApiHetfo.Controllers.OsystemController",
     "Method": "Post",
     "RelativePath": "osystem",
@@ -163,22 +223,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "ComputerApiHetfo.Controllers.OsystemController",
-    "Method": "GetWithComp",
-    "RelativePath": "osystem",
-    "HttpMethod": "",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "ComputerApiHetfo.Controllers.OsystemController",
