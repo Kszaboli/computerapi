@@ -54,7 +54,7 @@ namespace ComputerAPInet.Controllers
         {
             var comp = await computerContext.Comps.FirstOrDefaultAsync(comp => comp.Id == id);
             return comp != null ? Ok(comp) : NotFound(new { message = "Nincs ilyen találat." });
-        }
+        }        
 
         [HttpPut("{id}")]
         public async Task<ActionResult<Comp>> Put(Guid id, UpdateCompDto updateCompDto)

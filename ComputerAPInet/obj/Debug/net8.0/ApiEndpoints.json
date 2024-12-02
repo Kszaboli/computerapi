@@ -166,6 +166,22 @@
   },
   {
     "ContainingType": "ComputerApiHetfo.Controllers.OsystemController",
+    "Method": "GetWithComp",
+    "RelativePath": "osystem",
+    "HttpMethod": "",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ComputerApiHetfo.Controllers.OsystemController",
     "Method": "GetById",
     "RelativePath": "osystem/{id}",
     "HttpMethod": "GET",
