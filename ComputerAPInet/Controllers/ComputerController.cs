@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Asn1.Cmp;
+using static Microsoft.Extensions.Logging.EventSource.LoggingEventSource;
 
 namespace ComputerAPInet.Controllers
 {
@@ -153,6 +154,14 @@ namespace ComputerAPInet.Controllers
             var cmprecent = await computerContext.Comps.Where(cmp => cmp.CreatedTime == mostrecent)
                 .Select(cmp => new {cmp}).ToListAsync();
             return Ok(cmprecent);
+        }
+
+        [HttpGet("compwithlinux")]
+        public async Task<ActionResult<Comp>> getallwithlinux()
+        {
+            var compwithlinux = computerContext.Comps.Where(cmp =>
+                cmp.Os.Name.Contains("Linux")).Select(cmp => new { cmp.Brand, cmp.Type, cmp.Os.Name }).ToListAsync();
+            return Ok(compwithlinux);
         }
     }
 }
