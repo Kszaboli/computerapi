@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tanulo\\GitWorkDir\\ComputerAPInet\\ComputerAPInet\\ComputerAPInet.csproj": {}
+    "C:\\Users\\Tanulo\\Downloads\\ComputerAPIHetfo-main\\ComputerAPInet\\ComputerAPInet\\ComputerAPInet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tanulo\\GitWorkDir\\ComputerAPInet\\ComputerAPInet\\ComputerAPInet.csproj": {
+    "C:\\Users\\Tanulo\\Downloads\\ComputerAPIHetfo-main\\ComputerAPInet\\ComputerAPInet\\ComputerAPInet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tanulo\\GitWorkDir\\ComputerAPInet\\ComputerAPInet\\ComputerAPInet.csproj",
+        "projectUniqueName": "C:\\Users\\Tanulo\\Downloads\\ComputerAPIHetfo-main\\ComputerAPInet\\ComputerAPInet\\ComputerAPInet.csproj",
         "projectName": "ComputerAPInet",
-        "projectPath": "C:\\Users\\Tanulo\\GitWorkDir\\ComputerAPInet\\ComputerAPInet\\ComputerAPInet.csproj",
+        "projectPath": "C:\\Users\\Tanulo\\Downloads\\ComputerAPIHetfo-main\\ComputerAPInet\\ComputerAPInet\\ComputerAPInet.csproj",
         "packagesPath": "C:\\Users\\Tanulo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tanulo\\GitWorkDir\\ComputerAPInet\\ComputerAPInet\\obj\\",
+        "outputPath": "C:\\Users\\Tanulo\\Downloads\\ComputerAPIHetfo-main\\ComputerAPInet\\ComputerAPInet\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Tanulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,13 +48,13 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[8.0.11, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[8.0.11, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",

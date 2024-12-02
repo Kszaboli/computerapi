@@ -1,4 +1,8 @@
 
+using ComputerApiHetfo.Models;
+using ComputerAPInet.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace ComputerAPInet
 {
     public class Program
@@ -6,6 +10,12 @@ namespace ComputerAPInet
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<ComputerContext>(option =>
+            {
+                var connectionString = builder.Configuration.GetConnectionString("MySql");
+                option.UseMySQL(connectionString);
+            });
 
             // Add services to the container.
 
