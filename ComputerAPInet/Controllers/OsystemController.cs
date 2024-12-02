@@ -34,7 +34,7 @@ namespace ComputerApiHetfo.Controllers
             return BadRequest();
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<ActionResult<Osystem>> Get()
         {
             return Ok(await computerContext.Osystems.ToListAsync());
@@ -53,7 +53,7 @@ namespace ComputerApiHetfo.Controllers
 
             return NotFound(new { message = "Nincs ilyen találat." });*/
         }
-        /*
+        
         [HttpGet("WithComp")]
         public async Task<ActionResult> GetWithComp(Guid id)
         {
@@ -84,7 +84,7 @@ namespace ComputerApiHetfo.Controllers
 
             return NotFound();
         }
-        */
+        
 
         [HttpPut("{id}")]
         public async Task<ActionResult<Osystem>> Put(Guid id, UpdateOsDto updateOsDto)

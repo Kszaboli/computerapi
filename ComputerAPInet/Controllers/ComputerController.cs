@@ -44,7 +44,7 @@ namespace ComputerAPInet.Controllers
             return BadRequest();
         }
 
-        [HttpGet]
+        [HttpGet("all")]
         public async Task<ActionResult<Comp>> Get()
         {
             return Ok(await computerContext.Comps.ToListAsync());
@@ -78,7 +78,7 @@ namespace ComputerAPInet.Controllers
             return NotFound(new { message = "Nincs ilyen találat." });
         }
 
-        [HttpGet]
+        [HttpGet("NumOfComp")]
         public async Task<ActionResult<Comp>> GetNumOfComp()
         {
             var num = await computerContext.Comps.ToListAsync();
@@ -117,7 +117,8 @@ namespace ComputerAPInet.Controllers
             return Ok(allcomp);
         }
 
-        public async Task<ActionResult<Comp>> getallmicrosoft(string keyword)
+        [HttpGet("getallwithkeyword")]
+        public async Task<ActionResult<Comp>> getallwithkeyword(string keyword)
         {
             if (string.IsNullOrWhiteSpace(keyword))
             {

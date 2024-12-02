@@ -27,26 +27,6 @@
   },
   {
     "ContainingType": "ComputerAPInet.Controllers.CompController",
-    "Method": "Get",
-    "RelativePath": "comp",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "ComputerApiHetfo.Models.Comp",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ComputerAPInet.Controllers.CompController",
     "Method": "GetNumOfComp",
     "RelativePath": "comp",
     "HttpMethod": "GET",
@@ -140,6 +120,26 @@
   },
   {
     "ContainingType": "ComputerAPInet.Controllers.CompController",
+    "Method": "Get",
+    "RelativePath": "comp/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApiHetfo.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerAPInet.Controllers.CompController",
     "Method": "getallcompwithos",
     "RelativePath": "comp/allcompwithos",
     "HttpMethod": "GET",
@@ -160,8 +160,54 @@
   },
   {
     "ContainingType": "ComputerAPInet.Controllers.CompController",
-    "Method": "getallmicrosoft",
-    "RelativePath": "comp/allMicrosoft",
+    "Method": "getbiggestdisplay",
+    "RelativePath": "comp/biggestDisplay",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApiHetfo.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerAPInet.Controllers.CompController",
+    "Method": "getallwithkeyword",
+    "RelativePath": "comp/getallwithkeyword",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "keyword",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApiHetfo.Models.Comp",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerAPInet.Controllers.CompController",
+    "Method": "getrecent",
+    "RelativePath": "comp/most recent",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -192,26 +238,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "ComputerApiHetfo.Models.Osystem",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ComputerApiHetfo.Controllers.OsystemController",
-    "Method": "Get",
-    "RelativePath": "osystem",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "ComputerApiHetfo.Models.Osystem",
@@ -280,5 +306,41 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ComputerApiHetfo.Controllers.OsystemController",
+    "Method": "Get",
+    "RelativePath": "osystem/all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ComputerApiHetfo.Models.Osystem",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ComputerApiHetfo.Controllers.OsystemController",
+    "Method": "GetWithComp",
+    "RelativePath": "osystem/WithComp",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
