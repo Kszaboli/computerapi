@@ -140,7 +140,9 @@ namespace ComputerAPInet.Controllers
         public async Task<ActionResult<Comp>> getbiggestdisplay()
         {
             var biggestdisplay = await computerContext.Comps.MaxAsync(cmp => cmp.Display);
-            return Ok(biggestdisplay);
+            var cmpmaxdisplay = await computerContext.Comps.Where(cmp => cmp.Display == biggestdisplay)
+                .Select(cmp => new { cmp.Brand, cmp.Type, cmp.Display, cmp.Os.Name }).ToListAsync();
+            return Ok(cmpmaxdisplay);
         }
     }
 }
